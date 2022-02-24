@@ -59,14 +59,6 @@ namespace Mission7
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints are done in order you want to have certain ones come before others 
-
-                //this enpoint fixes the slug 
-                endpoints.MapControllerRoute(
-                    name: "Paging",
-                    pattern: "Page{pageNum}",
-                    defaults: new { Controller = "Home", action = "Index" });
-
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
