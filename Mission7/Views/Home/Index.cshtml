@@ -9,22 +9,7 @@
 
 @foreach(Book b in Model.Books)
 {
-    <h5>@b.Title</h5>
-    <ul>
-        <li>Publisher: @b.Publisher</li>
-        @if (b.Price > 15.00)
-        {
-            <li style="color: orangered"> $@b.Price</li>
-        }
-        else
-        { <li style="color : lawngreen"> $@b.Price</li>}
-        <li>ISBN @b.Isbn</li>
-        <li>Page count: @b.PageCount</li>
-        <li>Author: @b.Author</li>
-        <li>Category: @b.Category</li>
-        <li>Classification: @b.Classification</li>
-    </ul>
-    <br />
+    <partial name="BookstoreSummary" model="p" />
 }
 
 <div my-page="@Model.PageInfo" page-action="Index"  page-class="style="background-color : red"" page-class-normal="style="background-color : palegreen""></div>
